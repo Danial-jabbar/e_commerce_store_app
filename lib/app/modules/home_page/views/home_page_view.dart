@@ -15,7 +15,7 @@ class HomePageView extends GetView<HomePageController> {
       ),
       body: Center(
         child: Text(
-          'HomePageView is working',
+          'HomePageView',
           style: TextStyle(fontSize: 20),
         ),
       ),
