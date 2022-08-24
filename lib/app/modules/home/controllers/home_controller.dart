@@ -1,11 +1,9 @@
 import 'package:get/get.dart';
 
-class HomePageController extends GetxController {
-  //TODO: Implement HomePageController
+class HomeController extends GetxController {
+  //TODO: Implement HomeController
 
   final count = 0.obs;
-  final roomCount = 0.obs;
-  final isSelected = 1.obs;
   @override
   void onInit() {
     super.onInit();

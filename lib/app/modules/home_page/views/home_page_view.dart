@@ -1,3 +1,5 @@
+import 'package:e_commerce_store_app/app/modules/home_page/views/shared/tab_widget.dart';
+import 'package:e_commerce_store_app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -6,18 +8,115 @@ import '../controllers/home_page_controller.dart';
 
 class HomePageView extends GetView<HomePageController> {
   const HomePageView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomePageView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'HomePageView',
-          style: TextStyle(fontSize: 20),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Icon(
+                Icons.person,
+                color: AppColors.primary,
+              ),
+            ),
+          ],
         ),
+      ),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: AppColors.primary),
+        actions: [
+          Container(
+            height: 48,
+            width: 268,
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: AppColors.primary,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(35.0),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                hintText: 'Search Product',
+                hintStyle: TextStyle(color: AppColors.primaryLabelColor),
+              ),
+            ),
+            // color: Colors.grey,
+          ),
+        ],
+      ),
+      body: Column(
+        children:  [
+         const SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Find your suitable product now.",
+            style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Obx(() {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TabWidgets(
+                  onTap: () {
+                    controller.isSelected.value = 1;
+                    print("${controller.isSelected.value}");
+                  },
+                  name: "Hand Bags",
+                  widthOfLine: 75.0,
+                  lineColor: controller.isSelected.value == 1
+                      ? AppColors.secondary
+                      : Colors.white,
+                  textColor: controller.isSelected.value == 1
+                      ? AppColors.secondary
+                      : AppColors.primaryLabelColor,
+                ),
+                TabWidgets(
+                  onTap: () => controller.isSelected.value = 2,
+                  name: "Watch",
+                  widthOfLine: 43.0,
+                  lineColor: controller.isSelected.value == 2
+                      ? AppColors.secondary
+                      : Colors.white,
+                  textColor: controller.isSelected.value == 2
+                      ? AppColors.secondary
+                      : AppColors.primaryLabelColor,
+                ),
+                TabWidgets(
+                  onTap: () => controller.isSelected.value = 3,
+                  name: "Books",
+                  widthOfLine: 45.0,
+                  lineColor: controller.isSelected.value == 3
+                      ? AppColors.secondary
+                      : Colors.white,
+                  textColor: controller.isSelected.value == 3
+                      ? AppColors.secondary
+                      : AppColors.primaryLabelColor,
+                ),
+                TabWidgets(
+                  onTap: () => controller.isSelected.value = 4,
+                  name: "Glasses",
+                  widthOfLine: 55.0,
+                  lineColor: controller.isSelected.value == 4
+                      ? AppColors.secondary
+                      : Colors.white,
+                  textColor: controller.isSelected.value == 4
+                      ? AppColors.secondary
+                      : AppColors.primaryLabelColor,
+                ),
+              ],
+            );
+          }),
+        ],
       ),
     );
   }
