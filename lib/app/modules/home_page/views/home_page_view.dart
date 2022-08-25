@@ -1,4 +1,5 @@
-import 'package:e_commerce_store_app/app/modules/home_page/views/shared/tab_widget.dart';
+// import 'package:e_commerce_store_app/app/modules/home_page/views/shared/grid_view%20column.dart';
+import 'package:e_commerce_store_app/app/modules/home_page/views/shared/wedget/tab_widget.dart';
 import 'package:e_commerce_store_app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,7 @@ class HomePageView extends GetView<HomePageController> {
             return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TabWidgets(
+                TabWidget(
                   onTap: () {
                     controller.isSelected.value = 1;
                     print("${controller.isSelected.value}");
@@ -80,7 +81,7 @@ class HomePageView extends GetView<HomePageController> {
                       ? AppColors.secondary
                       : AppColors.primaryLabelColor,
                 ),
-                TabWidgets(
+                TabWidget(
                   onTap: () => controller.isSelected.value = 2,
                   name: "Watch",
                   widthOfLine: 43.0,
@@ -91,7 +92,7 @@ class HomePageView extends GetView<HomePageController> {
                       ? AppColors.secondary
                       : AppColors.primaryLabelColor,
                 ),
-                TabWidgets(
+                TabWidget(
                   onTap: () => controller.isSelected.value = 3,
                   name: "Books",
                   widthOfLine: 45.0,
@@ -102,7 +103,7 @@ class HomePageView extends GetView<HomePageController> {
                       ? AppColors.secondary
                       : AppColors.primaryLabelColor,
                 ),
-                TabWidgets(
+                TabWidget(
                   onTap: () => controller.isSelected.value = 4,
                   name: "Glasses",
                   widthOfLine: 55.0,
@@ -116,6 +117,18 @@ class HomePageView extends GetView<HomePageController> {
               ],
             );
           }),
+          const SizedBox(height: 28),
+          GridView.count(
+            crossAxisCount: 2,
+            padding: const EdgeInsets.all(16.0),
+            childAspectRatio: 8.0 / 9.0,
+            // TODO: Build a grid of cards (102)
+            children: <Widget>[
+              Card(
+
+            )
+            ],
+          ),
         ],
       ),
     );
