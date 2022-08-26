@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/app_color/bindings/app_color_binding.dart';
 import '../modules/app_color/views/app_color_view.dart';
+import '../modules/detail_page/bindings/detail_page_binding.dart';
+import '../modules/detail_page/views/detail_page_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/home_page/bindings/home_page_binding.dart';
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.APP_COLOR,
       page: () => const AppColorView(),
       binding: AppColorBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_PAGE,
+      page: () => const DetailPageView(),
+      binding: DetailPageBinding(),
     ),
   ];
 }

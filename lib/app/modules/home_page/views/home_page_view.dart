@@ -1,7 +1,10 @@
 // import 'package:e_commerce_store_app/app/modules/home_page/views/shared/grid_view%20column.dart';
+import 'package:e_commerce_store_app/app/modules/home_page/views/shared/ContainerCard.dart';
 import 'package:e_commerce_store_app/app/modules/home_page/views/shared/wedget/tab_widget.dart';
+import 'package:e_commerce_store_app/app/routes/app_pages.dart';
 import 'package:e_commerce_store_app/utils/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 
@@ -12,6 +15,8 @@ class HomePageView extends GetView<HomePageController> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: AppColors.secondary));
     return Scaffold(
 
       drawer: Drawer(
@@ -28,7 +33,7 @@ class HomePageView extends GetView<HomePageController> {
       ),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.secondary,
         iconTheme: IconThemeData(color: AppColors.primary),
         actions: [
           Container(
@@ -140,137 +145,32 @@ class HomePageView extends GetView<HomePageController> {
                     primary: false,
 
                     children: <Widget>[
-                      Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            AspectRatio(
-                              aspectRatio: 13.0 / 11.0,
-                              child: Image.asset('assets/images/brown_bag.png'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text('Mulberry Clutch',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
-                                  const SizedBox(height: 8.0),
-                                  Text('Series 7', style: TextStyle(color: Colors.grey),),
-                                  const SizedBox(height: 8.0),
-                                  Text('999',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.secondary),),
+                     ContainerCard(
+                       onTap: ()=> Get.toNamed(Routes.DETAIL_PAGE),
+                       name: 'Mulkbb',
+                       image: 'assets/images/golden_bag.png',
+                       price: 770,
+                       subTitle: 'series 7',
+                     ),
+                      ContainerCard(
+                        onTap: ()=> Get.toNamed(Routes.DETAIL_PAGE),
 
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
                       ),
-                      Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            AspectRatio(
-                              aspectRatio: 13.0 / 11.0,
-                              child: Image.asset('assets/images/light_black.png'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text('Mulberry Clutch',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
-                                  const SizedBox(height: 8.0),
-                                  Text('Series 7', style: TextStyle(color: Colors.grey),),
-                                  const SizedBox(height: 8.0),
-                                  Text('999',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.secondary),),
-
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                      ContainerCard(
+                        onTap: ()=> Get.toNamed(Routes.DETAIL_PAGE),
+                        name: 'Danial',
+                        image: 'assets/images/golden_bag.png',
+                        price: 770,
+                        subTitle: 'series 7',
                       ),
-                      Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            AspectRatio(
-                              aspectRatio: 13.0 / 11.0,
-                              child: Image.asset('assets/images/brown.png'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text('Mulberry Clutch',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
-                                  const SizedBox(height: 8.0),
-                                  Text('Series 7', style: TextStyle(color: Colors.grey),),
-                                  const SizedBox(height: 8.0),
-                                  Text('999',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.secondary),),
-
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            AspectRatio(
-                              aspectRatio: 13.0 / 11.0,
-                              child: Image.asset('assets/images/brown_bag.png'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text('Mulberry Clutch',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
-                                  const SizedBox(height: 8.0),
-                                  Text('Series 7', style: TextStyle(color: Colors.grey),),
-                                  const SizedBox(height: 8.0),
-                                  Text('999',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.secondary),),
-
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                      ContainerCard(
+                        onTap: ()=> Get.toNamed(Routes.DETAIL_PAGE),
+                        name: 'Danial',
+                        image: 'assets/images/golden_bag.png',
+                        price: 770,
+                        subTitle: 'series 7',
                       ),
 
-                      Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            AspectRatio(
-                              aspectRatio: 13.0 / 11.0,
-                              child: Image.asset('assets/images/brown_bag.png'),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text('Mulberry Clutch',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
-                                  const SizedBox(height: 8.0),
-                                  Text('Series 7', style: TextStyle(color: Colors.grey),),
-                                  const SizedBox(height: 8.0),
-                                  Text('999',style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.secondary),),
-
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
 
 
                     ],
@@ -284,3 +184,5 @@ class HomePageView extends GetView<HomePageController> {
     );
   }
 }
+
+
